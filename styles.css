@@ -42,6 +42,24 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: var(--transition);
+    overflow-x: hidden;
+}
+
+/* スクロールアニメーション */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* パララックス効果 */
+.section {
+    position: relative;
 }
 
 /* ヘッダー */
@@ -182,6 +200,23 @@ body {
     object-fit: cover;
     border: 4px solid var(--accent-color);
     box-shadow: 0 4px 8px var(--shadow);
+    transition: var(--transition);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 8px 16px var(--shadow);
+    animation-play-state: paused;
 }
 
 .about-name {
@@ -235,8 +270,12 @@ body {
 }
 
 .skill-category:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 4px 12px var(--shadow);
+}
+
+.skill-category {
+    position: relative;
 }
 
 .skill-category-title {
@@ -265,6 +304,75 @@ body {
 .skill-item:hover {
     color: var(--accent-color);
     padding-left: 1rem;
+}
+
+/* スキルプログレスバー */
+.skill-progress-list {
+    list-style: none;
+}
+
+.skill-progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.skill-percent {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 1.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* Experienceセクション */
@@ -346,6 +454,46 @@ body {
 .footer-text {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* スクロールトップボタン */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 1000;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+/* アクティブなナビゲーションリンク */
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+.nav-link.active::after {
+    width: 100%;
 }
 
 /* プロフィールページ */
@@ -525,6 +673,14 @@ body {
 
     .about-description {
         font-size: 1rem;
+    }
+
+    .scroll-top {
+        width: 40px;
+        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 1.2rem;
     }
 }
 
