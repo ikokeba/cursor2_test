@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="プロフィールページ">
+    <title>プロフィール - ポートフォリオ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html">ポートフォリオ</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="profile-page">
+                    <div class="profile-header">
+                        <img src="assets/images/profile.jpg" alt="プロフィール画像" class="profile-img-large">
+                        <h1 class="profile-title">あなたの名前</h1>
+                        <p class="profile-subtitle">Web Developer / Designer</p>
+                    </div>
+                    
+                    <div class="profile-content">
+                        <div class="profile-section">
+                            <h2 class="profile-section-title">自己紹介</h2>
+                            <p class="profile-text">
+                                ここに詳細な自己紹介を記入してください。あなたの経歴、興味、目標、価値観などを詳しく説明します。
+                                このセクションでは、訪問者により深い理解を提供することができます。
+                            </p>
+                        </div>
+
+                        <div class="profile-section">
+                            <h2 class="profile-section-title">経歴</h2>
+                            <p class="profile-text">
+                                ここに詳細な経歴を記入してください。学歴、職歴、プロジェクト経験などを時系列で説明します。
+                            </p>
+                        </div>
+
+                        <div class="profile-section">
+                            <h2 class="profile-section-title">連絡先</h2>
+                            <p class="profile-text">
+                                メール: your.email@example.com<br>
+                                GitHub: github.com/yourusername<br>
+                                Twitter: @yourusername
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <a href="index.html" class="btn btn-primary">ポートフォリオに戻る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2024 あなたの名前. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
