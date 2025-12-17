@@ -1,0 +1,45 @@
+about:
+  name: あなたの名前
+  description: |
+    ここに自己紹介文を記入してください。あなたの経歴、興味、目標などを簡潔に説明します。
+    このセクションは、訪問者にあなたについての第一印象を与える重要な部分です。
+  image: assets/images/profile.jpg
+
+skills:
+  - title: プログラミング言語
+    items:
+      - name: JavaScript
+        percent: 90
+      - name: TypeScript
+        percent: 85
+      - name: Python
+        percent: 80
+      - name: HTML/CSS
+        percent: 95
+  - title: フレームワーク・ライブラリ
+    items:
+      - name: React
+        percent: 88
+      - name: Next.js
+        percent: 82
+      - name: Vue.js
+        percent: 75
+  - title: ツール・その他
+    items:
+      - name: Git
+        percent: 90
+      - name: VS Code
+        percent: 95
+      - name: Figma
+        percent: 70
+
+experience:
+  - period: 2024年1月 - 現在
+    title: 職歴・プロジェクト名
+    description: ここに職歴やプロジェクトの説明を記入してください。担当した役割や成果を簡潔に説明します。
+  - period: 2023年6月 - 2023年12月
+    title: 職歴・プロジェクト名
+    description: ここに職歴やプロジェクトの説明を記入してください。担当した役割や成果を簡潔に説明します。
+  - period: 2022年4月 - 2023年5月
+    title: 職歴・プロジェクト名
+    description: ここに職歴やプロジェクトの説明を記入してください。担当した役割や成果を簡潔に説明します。
